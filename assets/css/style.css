@@ -1,0 +1,29 @@
+h1 {
+  font-size: 36px;
+  margin-top:50px;
+  font-weight: bold;
+  font-family: 'Avenir', Times, Times New Roman, serif;
+  color: green; 
+  text-align: center;
+}
+
+
+#oneMore
+{
+  text-align: center;
+}
+
+#nflTeams
+{
+  padding: 10px;
+}
+
+input
+{
+  margin-right: 10px;
+  margin-left:25px;
+  margin-top:5px;
+}
+
+
+
