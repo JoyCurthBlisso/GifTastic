@@ -68,7 +68,7 @@ $(document).ready(function()
 	renderButtons();
 });
 
-	  $(document).on("click", ".gif", function(img) {
+	  $(document).on("click", ".gif", function (img) {
 
       var state = $(this).attr("data-state");
 
@@ -79,6 +79,7 @@ $(document).ready(function()
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
       } else {
+      	console.log(state);
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
       }
