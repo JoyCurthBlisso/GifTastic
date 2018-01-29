@@ -20,17 +20,16 @@ $(document).ready(function()
 
 	function renderImages(nflTeam) {
 
-	    console.log(nflTeam);
 	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=nfl " + nflTeam + "&limit=10&api_key=wFYHRlJCFydymeonsPlddPn1IDy4ruFe";
 	    $.ajax({
 			url: queryURL,
 			method: 'GET'
 	    }).then(function(response) {
-	     	console.log(response);
 			
 			$("#nflImages").html("");
 			$.each(response.data, function(index, item){
-				var img = $('<div>Rating: ' + item.rating + '</div><br/><img src="' + item.images.original_still.url + '"data-animate="' + item.images.original.url + '"data-state="still" class="gif"/>');
+				var img = $('<div>Rating: ' + item.rating + '</div><br/> <img src="' + item.images.original_still.url + '" data-animate="' + item.images.original.url + '" data-state="still"/>');
+				img.addClass("gif");
 				console.log(img);
 				
 				$("#nflImages").append(img);
@@ -68,9 +67,13 @@ $(document).ready(function()
 
 	renderButtons();
 });
-	  $(".gif").on("click", function() {
+
+	  $(document).on("click", ".gif", function(img) {
 
       var state = $(this).attr("data-state");
+
+      console.log(state);
+      console.log(img);
      
       if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
