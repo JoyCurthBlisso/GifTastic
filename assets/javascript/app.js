@@ -28,7 +28,7 @@ $(document).ready(function()
 			
 			$("#nflImages").html("");
 			$.each(response.data, function(index, item){
-				var img = $('<div>Rating: ' + item.rating + '</div><br/> <img src="' + item.images.original_still.url + '" data-animate="' + item.images.original.url + '" data-state="still"/>');
+				var img = $('<div>Rating: ' + item.rating + '</div><br/> <img src="' + item.images.original_still.url + '" data-still="' + item.images.original_still.url + '" data-animate="' + item.images.original.url + '" data-state="still"/>');
 				img.addClass("gif");
 				
 				$("#nflImages").append(img);
