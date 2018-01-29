@@ -30,7 +30,6 @@ $(document).ready(function()
 			$.each(response.data, function(index, item){
 				var img = $('<div>Rating: ' + item.rating + '</div><br/> <img src="' + item.images.original_still.url + '" data-animate="' + item.images.original.url + '" data-state="still"/>');
 				img.addClass("gif");
-				console.log(img);
 				
 				$("#nflImages").append(img);
 
@@ -72,14 +71,10 @@ $(document).ready(function()
 
       var state = $(this).attr("data-state");
 
-      console.log(state);
-      console.log(img);
-     
       if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
       } else {
-      	console.log(state);
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
       }
